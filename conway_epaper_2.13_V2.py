@@ -10,48 +10,157 @@ if os.path.exists(libdir):
 import logging
 from waveshare_epd import epd2in13_V2
 import time
-from PIL import Image,ImageDraw,ImageFont
+from PIL import Image,ImageDraw,ImageFont,ImageOps
 import traceback
+
+import argparse
+import random
+import numpy as np
+from datetime import datetime
+import png
+
+print("Im working")
+time.sleep(30)
+
+my_parser = argparse.ArgumentParser()
+my_parser.add_argument('-g', '--generation', action='store', type=int,
+    help="Sets the max generation.")
+my_parser.add_argument('-p', '--population', action='store', type=int,
+    help="Percentage of times that random cells of life are added to based on board size.")
+my_parser.add_argument('-s', '--sleep', action='store', type=int,
+    help="Time that the program sleeps inbetween generations")
+my_parser.add_argument('-d', '--delete', action='store_true',
+    help="Flag used if you want the images of generations deleted when program is done running.")
+
+# Sanity checks user inputs
+args = my_parser.parse_args()
+
+# Fills in default values if user did not define
+height = 250
+width = 122
+
+if args.generation is None:
+    maxgeneration = 250
+else:
+    maxgeneration = args.generation
+
+if args.population is None:
+    population = .2
+else:
+    population = args.population / 100
+
+if args.sleep is None:
+    sleep = 2
+else:
+    sleep = args.sleep
 
 logging.basicConfig(level=logging.DEBUG)
 
+path = os.getcwd()
+isdir = os.path.isdir("temp")
+np.random.seed(random.seed(datetime.now()))
+
+# Generation 0
+generation = 0
+newtable = np.zeros((width,height))
+oldtable = newtable
+
+# Generation 1
+# Randomly sets an intial state of living squares
+for i in range(int(width * height * (population))):
+    newtable[random.randint(0, width - 1 )][random.randint(0, height - 1 )] = 1
+
+print(newtable)
+
+def countNeighbors(oldtable,x,y):
+    """Counts the living neighbors of a cell
+
+    Args:
+        oldtable: 
+        x (int): cordanante of the starting cell
+        y (int): coordinate of the starting cell
+
+    Returns:
+        int: count of the neighbors
+
+    """
+    temp = 1
+
+    count = 0
+    for i in range(-1,2):
+        for j in range(-1,2):
+            if not (i==0 and j==0):  #TODO: this needs rewritin to be more understandable
+                count += int(oldtable[(x + i + width) % width][(y + j + height) % height])
+
+    for i in range(-1,2):
+        for j in range(-1,2):
+            temp += 1
+
+    count -= int(oldtable[x][y])
+
+    return count
+
+if isdir == False:
+    os.mkdir("temp")
+
+epd = epd2in13_V2.EPD()
+logging.info("init and Clear")
+epd.init(epd.FULL_UPDATE)
+
+logging.info("Conways Game of life on wave share 2.13in e-Paper")
+
+while True:
+    # epd.Clear(0xFF)
+    logging.info("Clear Screen")
+    #epd.init(epd.FULL_UPDATE)
+    #epd.Clear(0xFF)
+
+    oldtable = newtable
+
+    #np.invert(newtable)
+    binary_transform = np.array(newtable).astype(np.uint8)
+    binary_transform[binary_transform>0] = 255    
+    img = Image.fromarray(binary_transform, 'P')
+    img.save('image.bmp')
+
+    image = Image.open(os.path.join("image.bmp"))
+    epd.display(epd.getbuffer(image))
+
+    # Calculates the state of the next generation
+    for x in range(width):
+        for y in range(height):
+            neighbors =  countNeighbors(oldtable,x,y)
+            # Calculate dead cells
+            if oldtable[x][y] == 0 and neighbors == 3:
+                newtable[x][y] = 1
+            # Calculate alive cells
+            elif oldtable[x][y] == 1 and (neighbors < 2 or neighbors > 3):
+                newtable[x][y] = 0
+
+    #print("Generation: ", generation)
+    generation +=1
+
+    if generation > maxgeneration:
+        break
+
+    #time.sleep(2)
+
+"""
 try:
-    logging.info("epd2in13_V2 Demo")
     
     epd = epd2in13_V2.EPD()
     logging.info("init and Clear")
     epd.init(epd.FULL_UPDATE)
     epd.Clear(0xFF)
-
-    # Drawing on the image
-    font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
-    
-    logging.info("1.Drawing on the image...")
-    image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
-    draw = ImageDraw.Draw(image)
-    
-    draw.rectangle([(0,0),(50,50)],outline = 0)
-    draw.rectangle([(55,0),(100,50)],fill = 0)
-    draw.line([(0,0),(50,50)], fill = 0,width = 1)
-    draw.line([(0,50),(50,0)], fill = 0,width = 1)
-    draw.chord((10, 60, 50, 100), 0, 360, fill = 0)
-    draw.ellipse((55, 60, 95, 100), outline = 0)
-    draw.pieslice((55, 60, 95, 100), 90, 180, outline = 0)
-    draw.pieslice((55, 60, 95, 100), 270, 360, fill = 0)
-    draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
-    draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
-    draw.text((120, 60), 'e-Paper demo', font = font15, fill = 0)
-    draw.text((110, 90), u'微雪电子', font = font24, fill = 0)
-    epd.display(epd.getbuffer(image))
-    time.sleep(2)
     
     # read bmp file 
     logging.info("2.read bmp file...")
     image = Image.open(os.path.join(picdir, '2in13.bmp'))
     epd.display(epd.getbuffer(image))
     time.sleep(2)
-    
+"""
+
+"""
     # read bmp file on window
     logging.info("3.read bmp file on window...")
     # epd.Clear(0xFF)
@@ -60,36 +169,23 @@ try:
     image1.paste(bmp, (2,2))    
     epd.display(epd.getbuffer(image1))
     time.sleep(2)
+"""
     
-    # # partial update
-    logging.info("4.show time...")
-    time_image = Image.new('1', (epd.height, epd.width), 255)
-    time_draw = ImageDraw.Draw(time_image)
-    
-    epd.init(epd.FULL_UPDATE)
-    epd.displayPartBaseImage(epd.getbuffer(time_image))
-    
-    epd.init(epd.PART_UPDATE)
-    num = 0
-    while (True):
-        time_draw.rectangle((120, 80, 220, 105), fill = 255)
-        time_draw.text((120, 80), time.strftime('%H:%M:%S'), font = font24, fill = 0)
-        epd.displayPartial(epd.getbuffer(time_image))
-        num = num + 1
-        if(num == 10):
-            break
-    # epd.Clear(0xFF)
-    logging.info("Clear...")
-    epd.init(epd.FULL_UPDATE)
-    epd.Clear(0xFF)
-    
-    logging.info("Goto Sleep...")
-    epd.sleep()
+# epd.Clear(0xFF)
+logging.info("Clear...")
+epd.init(epd.FULL_UPDATE)
+epd.Clear(0xFF)
+
+logging.info("Goto Sleep...")
+epd.sleep()
         
+"""
 except IOError as e:
     logging.info(e)
+
     
 except KeyboardInterrupt:    
     logging.info("ctrl + c:")
     epd2in13_V2.epdconfig.module_exit()
     exit()
+"""
