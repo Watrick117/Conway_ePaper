@@ -17,7 +17,7 @@ Tutorial:
     
   <code>
   sudo git clone https://github.com/waveshare/e-Paper
-  <code>
+  </code>
   
   <code>
   cd e-Paper-master
@@ -25,7 +25,7 @@ Tutorial:
   cd python
   sudo python3 setup.py build
   sudo python3 setup.py install
-  <code>
+  </code>
   
   "Drag and Drop" the conway_epaper.py into the examples folder
     
