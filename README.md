@@ -94,9 +94,8 @@ Here's a blank template to get started:
 
 ### Built With
 
-* []()
-* []()
-* []()
+* []Python
+* []<a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT">Waveshare 2.12inch_e-Paper_HAT</a>
 
 
 
@@ -165,7 +164,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - PatrickHWoltman@gmail.com
+Patrick Woltman - [@twitter_handle](https://twitter.com/twitter_handle) - PatrickHWoltman@gmail.com
 
 Project Link: [https://github.com/Watrick117/Conway_ePaper](https://github.com/Watrick117/Conway_ePaper)
 
