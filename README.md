@@ -6,14 +6,14 @@ Tutorial:
   I followed this tutorial to start and then filled in what I needed.
     #https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT
   
-  <body>
+  <p>
     <code>sudo apt-get update
       sudo apt-get install python3-pip
       sudo apt-get install python3-pil
       sudo apt-get install python3-numpy
       sudo pip3 install RPi.GPIO
       sudo pip3 install spidev</code>
-  </body>
+  </p>
   
   <code>
   sudo git clone https://github.com/waveshare/e-Paper
