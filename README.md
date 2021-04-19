@@ -7,18 +7,18 @@
     #https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT<h4>
 <p>
 <code>
-		    sudo apt-get update
-    		sudo apt-get install python3-pip
-    		sudo apt-get install python3-pil
-    		sudo apt-get install python3-numpy
-    		sudo pip3 install RPi.GPIO
-    		sudo pip3 install spidev</code>
+	sudo apt-get update
+	sudo apt-get install python3-pip
+	sudo apt-get install python3-pil
+	sudo apt-get install python3-numpy
+	sudo pip3 install RPi.GPIO
+sudo pip3 install spidev</code>
 
 </p>
-  <code>
+<code>
   sudo git clone https://github.com/waveshare/e-Paper
-  </code>
-  
+</code>
+  <p>
   <code>
   		cd e-Paper-master
   		cd RaspberryPi_JetsonNano
@@ -26,6 +26,7 @@
   		sudo python3 setup.py build
   		sudo python3 setup.py install
   </code>
+  </p>
   
   "Drag and Drop" the conway_epaper.py into the examples folder
     
