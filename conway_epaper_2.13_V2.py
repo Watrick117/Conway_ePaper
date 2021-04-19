@@ -2,9 +2,6 @@
 import sys
 import os
 
-picdir = os.path.join(os.path.dirname(os.path.dirname(
-         os.path.realpath(__file__))), 'pic')
-
 libdir = os.path.join(os.path.dirname(os.path.dirname(
          os.path.realpath(__file__))), 'lib')
 
@@ -15,7 +12,6 @@ from waveshare_epd import epd2in13_V2
 import time
 from PIL import Image, ImageDraw, ImageFont
 import traceback
-
 import argparse
 import random
 import numpy as np
@@ -61,15 +57,6 @@ if args.population is None:
 else:
     population = args.population / 100
 
-path = os.getcwd()
-np.random.seed(random.seed(datetime.now()))
-
-# Generation 0
-generation = 0
-newgen = np.zeros((WID, HGT))
-oldgen = newgen
-
-
 def countNeighbors(oldgen, x, y):
     """Counts the living neighbors of a cell
 
@@ -103,7 +90,14 @@ def countNeighbors(oldgen, x, y):
 epd = epd2in13_V2.EPD()
 epd.init(epd.FULL_UPDATE)
 
-while True:
+def main():
+
+    np.random.seed(random.seed(datetime.now()))
+
+    # Generation 0
+    generation = 0
+    newgen = np.zeros((WID, HGT))
+    oldgen = newgen
 
     # Generation 1 Creation
     # Randomly sets an intial state of living squares
@@ -135,3 +129,9 @@ while True:
 
         if generation > maxgeneration:
             break
+
+if __name__ == "__main__":
+    main()
+
+while True:
+    main()
