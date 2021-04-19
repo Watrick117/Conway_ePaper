@@ -8,12 +8,12 @@ Tutorial:
   
   <div>
     <code>
-    sudo apt-get update
-    sudo apt-get install python3-pip
-    sudo apt-get install python3-pil
-    sudo apt-get install python3-numpy
-    sudo pip3 install RPi.GPIO
-    sudo pip3 install spidev
+    <code>sudo apt-get update</code>
+    <code>sudo apt-get install python3-pip</code>
+    <code>sudo apt-get install python3-pil</code>
+    <code>sudo apt-get install python3-numpy</code>
+    <code>sudo pip3 install RPi.GPIO</code>
+    <code>sudo pip3 install spidev</code>
     </code>
   </div>
   
