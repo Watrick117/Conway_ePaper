@@ -87,12 +87,9 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`Watrick117`, `Conway_ePaper`, `twitter_handle`, `PatrickHWoltman@gmail.com`, `Conway_ePaper`, `Conway's Game of Life on e-Paper`
-
-
 ### Built With
+
+
 
 * [Raspbery Pi Zero WH]
 * [<a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT">Waveshare 2.12inch_e-Paper_HAT</a>]
@@ -103,7 +100,7 @@ Here's a blank template to get started:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get this project up and running follow the tutorial below.
 
 ### Tutorial
 
@@ -120,10 +117,10 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation: via ssh over wifi
 
-1. Starting with a fresh install of Raspbian Lite OS
+1. Start with a fresh install of Raspbian Lite OS
 
 2. Clone the repo
-   Download the code from this git hub repo
+   *Download the code from this git hub repo
    ```sh
    git clone https://github.com/Watrick117/Conway_ePaper.git
    ```
