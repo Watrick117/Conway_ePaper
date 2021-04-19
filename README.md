@@ -108,7 +108,7 @@ To get a local copy up and running follow these simple steps.
 ### Tutorial
 
 This is an example of how to list things you need to use the software and how to install them.
-```
+
 ## Prerequisites
     ```sh
 	sudo apt-get install python3-pip
@@ -116,7 +116,7 @@ This is an example of how to list things you need to use the software and how to
 	sudo apt-get install python3-numpy
 	sudo pip3 install RPi.GPIO
 	sudo pip3 install spidev
-	```
+    ```
 
 ### Installation
 
