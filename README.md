@@ -114,7 +114,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation: via ssh over wifi
 
-1. Start with a fresh install of Raspbian Lite OS
+1. Start with a fresh install of Raspbian Lite OS with ssh enabled
 
 2. Clone the repo
    *Download the code from this git hub repo
