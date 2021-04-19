@@ -27,9 +27,6 @@ my_parser.add_argument('-g', '--generation', action='store', type=int,
 my_parser.add_argument('-p', '--population', action='store',
                        type=int, help="Percentage of times that random" +
                        "cells of life are added to based on board size.")
-my_parser.add_argument('-d', '--delete', action='store_true',
-                       help="Flag used if you want the images of generations" +
-                       "deleted when program is done running.")
 
 # Sanity checks user inputs
 args = my_parser.parse_args()
