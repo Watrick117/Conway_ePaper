@@ -7,14 +7,12 @@ Tutorial:
     #https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT
   
   <div>
-    <code>
     <code>sudo apt-get update</code>
     <code>sudo apt-get install python3-pip</code>
     <code>sudo apt-get install python3-pil</code>
     <code>sudo apt-get install python3-numpy</code>
     <code>sudo pip3 install RPi.GPIO</code>
     <code>sudo pip3 install spidev</code>
-    </code>
   </div>
   
   <code>
