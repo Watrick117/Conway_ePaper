@@ -20,12 +20,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -214,3 +211,12 @@ Project Link: [https://github.com/Watrick117/Conway_ePaper](https://github.com/W
 * []()
 * []()
 * []()
+
+
+
+[forks-shield]: https://img.shields.io/github/forks/Watrick117/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/Watrick117/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/Watrick117/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/Watrick117/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Watrick117/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/Watrick117/repo/issues
