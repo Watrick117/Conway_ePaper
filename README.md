@@ -88,7 +88,7 @@
 
 
 
-* [Raspbery Pi Zero WH]
+* [<a href="https://www.raspberrypi.org/products/raspberry-pi-zero-w/">Raspbery Pi Zero WH]
 * [<a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT">Waveshare 2.12inch_e-Paper_HAT</a>]
 * [Python]
 
@@ -110,22 +110,14 @@ This is an example of how to list things you need to use the software and how to
    sudo apt-get install python3-numpy
    sudo pip3 install RPi.GPIO
    sudo pip3 install spidev
+   sudo pip3 install pypng
    ```
 
 ### Installation: via ssh over wifi
 
 1. Start with a fresh install of Raspbian Lite OS with ssh enabled
 
-2. Clone the repo
-   *Download the code from this git hub repo
-   ```sh
-   git clone https://github.com/Watrick117/Conway_ePaper.git
-   ```
-3. Clone the Waveshare Demo Code
-   ```sh
-   https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT
-   ```
-4. Update and Download Prerequisites
+2. Update Raspbian and Download Prerequisites
    ```sh
    sudo apt-get update
    sudo apt-get install python3-pip
@@ -133,28 +125,48 @@ This is an example of how to list things you need to use the software and how to
    sudo apt-get install python3-numpy
    sudo pip3 install RPi.GPIO
    sudo pip3 install spidev
+   sudo pip3 install pypng
+   sudo apt install git
    ```
-5. Change to the directory that contains and build and install the setup.py file
+   
+3. Create 'code' folder
    ```sh
-   cd e-Paper-master
+   sudo mkdir code
+   cd code
+   ```
+4. Clone the Waveshare Demo Code
+   ```sh
+   sudo git clone https://github.com/waveshare/e-Paper
+   ```
+5. Clone the repo
+   *Download the code from this git hub repo
+   ```sh
+   sudo git clone https://github.com/Watrick117/Conway_ePaper.git
+   ```
+6. Change to the directory that contains and build and install the setup.py file
+   ```sh
+   cd e-Paper
    cd RaspberryPi_JetsonNano
    cd python
    sudo python3 setup.py build
    sudo python3 setup.py install
    ```
-6. Move the conway_epaper.py into the examples folder
+7. Copy the conway_epaper.py into the examples folder
    ```sh
-   Drag and drop animation
+   cd Conway_ePaper
+   sudo cp conway_epaper.py ../examples/conway_epaper.py
+   cd ..
+   cd examples
    ```
-7. Test run the code!
+8. Test run the code!
    ```sh
    sudo python3 conway_epaper.py --size 250 122 -p 15 -g 90
    ```
-8. Modify your arguments to suit your tastes and needs
+9. Modify your command line arguments to suit your tastes and needs
    * ['-s', '--size'] --Takes in two arguments that represent the size of your screen.
    * ['-g', '--generation'] --Sets the max generation.
    * ['-p', '--population'] --Percentage of times that random cells of life are added to based on board size.
-9. Add the conway_epaper.py to crontab to run each time the raspbery pi restarts
+10. Set code to run on startup
    ```sh
    crontab -e
    @reboot sudo python3 /home/pi/code/python/examples/conway_epaper_2.13_V2.py --size 250 122 -p 15 -g 90
