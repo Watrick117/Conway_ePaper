@@ -115,7 +115,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation: via ssh over wifi
 
-1. Start with a fresh install of Raspbian Lite OS with ssh enabled
+1. Start with a fresh install of Raspbian Lite OS with ssh and spi enabled
 
 2. Update Raspbian and Download Prerequisites
    ```sh
