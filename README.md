@@ -30,7 +30,7 @@ Tutorial:
   "Drag and Drop" the conway_epaper.py into the examples folder
     
   And... test run the code!
-  sudo python3 conway_epaper.py --size 250 122 -p 15 -g 90
+  <code>sudo python3 conway_epaper.py --size 250 122 -p 15 -g 90</code>
   
   modify your arguments to suit your tastes and needs!
   
