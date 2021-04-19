@@ -13,7 +13,7 @@ Tutorial:
   sudo apt-get install python3-numpy
   sudo pip3 install RPi.GPIO
   sudo pip3 install spidev
-  <code>
+  </code>
     
   <code>
   sudo git clone https://github.com/waveshare/e-Paper
