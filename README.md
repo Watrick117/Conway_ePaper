@@ -1,6 +1,6 @@
 # conway_epaper
 
-<h1>A tribute to John Conway's game of life running on a waveshare 2.13 e-Paper V2 display</h>
+<h1>A tribute to John Conway's game of life running on a waveshare 2.13 e-Paper V2 display<\h>
 
 Tutorial:
   I followed this tutorial to start and then filled in what I needed.
