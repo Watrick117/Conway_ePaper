@@ -108,7 +108,7 @@ To get a local copy up and running follow these simple steps.
 ### Tutorial
 
 This is an example of how to list things you need to use the software and how to install them.
-* Prerequisites
+# Prerequisites
   ```sh
 	sudo apt-get install python3-pip
 	sudo apt-get install python3-pil
@@ -156,6 +156,12 @@ This is an example of how to list things you need to use the software and how to
    * ['-s', '--size'] --Takes in two arguments that represent the size of your screen.
    * ['-g', '--generation'] --Sets the max generation.
    * ['-p', '--population'] --Percentage of times that random cells of life are added to based on board size.
+8. Add the conway_epaper.py to crontab to run each time the raspbery pi restarts
+   ```sh
+   crontab -e
+   @reboot sudo python3 /home/pi/code/python/examples/conway_epaper_2.13_V2.py --size 250 122 -p 15 -g 90
+   ```
+
 
 
 
