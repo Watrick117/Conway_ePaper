@@ -221,15 +221,15 @@ Project Link: [https://github.com/Watrick117/Conway_ePaper](https://github.com/W
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Watrick117/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/Watrick117/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Watrick117/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/Watrick117/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/Watrick117/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/Watrick117/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Watrick117/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/Watrick117/repo/issues
+[license-shield]: https://img.shields.io/github/license/Watrick117/repo.svg?style=for-the-badge
+[license-url]: https://github.com/Watrick117/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
+[linkedin-url]: https://linkedin.com/in/Watrick117
