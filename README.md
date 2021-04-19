@@ -111,7 +111,6 @@ This is an example of how to list things you need to use the software and how to
 * npm
   ```sh
 	sudo apt-get update
-	```
 	sudo apt-get install python3-pip
 	```
 	sudo apt-get install python3-pil
