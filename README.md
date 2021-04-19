@@ -172,7 +172,7 @@ This is an example of how to list things you need to use the software and how to
    ```
    add this line to the bottom of the file
    ```sh
-   @reboot sudo python3 /home/pi/code/python/examples/conway_epaper_2.13_V2.py --size 250 122 -p 15 -g 90
+   @reboot sudo python3 /home/pi/code/e-Paper/RaspberryPi_JetsonNano/python/examples/conway_epaper.py --size 250 122 -p 15 -g 90
    ```
 
 
