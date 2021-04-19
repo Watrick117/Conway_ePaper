@@ -110,7 +110,6 @@ To get a local copy up and running follow these simple steps.
 This is an example of how to list things you need to use the software and how to install them.
 * Prerequisites
   ```sh
-	sudo apt-get update
 	sudo apt-get install python3-pip
 	sudo apt-get install python3-pil
 	sudo apt-get install python3-numpy
@@ -124,10 +123,39 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/Watrick117/Conway_ePaper.git
    ```
-2. Install NPM packages
+2. Clone the Waveshare Demo Code
    ```sh
-   npm install
+   https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT
    ```
+3. Update and Download Prerequisites
+   ```sh
+   sudo apt-get update
+   sudo apt-get install python3-pip
+   sudo apt-get install python3-pil
+   sudo apt-get install python3-numpy
+   sudo pip3 install RPi.GPIO
+   sudo pip3 install spidev
+   ```
+4. Change to the directory that contains and build and install the setup.py file
+   ```sh
+   cd e-Paper-master
+   cd RaspberryPi_JetsonNano
+   cd python
+   sudo python3 setup.py build
+   sudo python3 setup.py install
+   ```
+5. Move the conway_epaper.py into the examples folder
+   ```sh
+   Drag and drop animation
+   ```
+6. Test run the code!
+   ```sh
+   sudo python3 conway_epaper.py --size 250 122 -p 15 -g 90
+   ```
+7. Modify your arguments to suit your tastes and needs
+   * ['-s', '--size'] --Takes in two arguments that represent the size of your screen.
+   * ['-g', '--generation'] --Sets the max generation.
+   * ['-p', '--population'] --Percentage of times that random cells of life are added to based on board size.
 
 
 
