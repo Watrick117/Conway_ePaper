@@ -94,8 +94,9 @@ Here's a blank template to get started:
 
 ### Built With
 
-* []Python
+* []Raspbery Pi Zero WH
 * []<a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT">Waveshare 2.12inch_e-Paper_HAT</a>
+* []Python
 
 
 
